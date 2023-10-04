@@ -314,11 +314,11 @@ let tr_function fdef =
             (if getRegisterCount e1 < getRegisterCount e2 then
                tr_exprAlt e2 i
                @@ tr_exprAlt e1 (i+1)
+               @@ op reg ("$t" ^ (string_of_int (i+1))) reg
             else
                tr_exprAlt e1 i
                @@ tr_exprAlt e2 (i+1))
-
-            @@ op reg reg ("$t" ^ (string_of_int (i+1)))
+               @@ op reg reg ("$t" ^ (string_of_int (i+1)))
 
       (* Function call.
          Before jumping to the function itself, evaluate all parameters and put
