@@ -88,7 +88,7 @@ __affiche_ligne_0:
 	li $t1, 1
 	add $t0, $t0, $t1
 	lw $t1, -8($fp)
-	slt $t0, $t0, $t1
+	slt $t0, $t1, $t0
 	bnez $t0, __affiche_ligne_1
 	li $t0, 0
 	addi $sp, $fp, -4
@@ -1104,11 +1104,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -1116,11 +1121,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -1128,1123 +1138,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	add $t0, $t0, $t1
-	lw $t1, -8($fp)
-	lw $t2, -8($fp)
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -2740,11 +1643,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -2752,11 +1660,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -2764,599 +1677,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	lw $t2, -8($fp)
-	lw $t3, -8($fp)
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	lw $t3, -8($fp)
-	lw $t4, -8($fp)
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	lw $t4, -8($fp)
-	lw $t5, -8($fp)
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	lw $t5, -8($fp)
-	lw $t6, -8($fp)
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3596,11 +1926,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3608,11 +1943,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3620,11 +1960,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3736,11 +2081,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3748,11 +2098,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3760,11 +2115,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3812,11 +2172,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3824,11 +2189,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3836,11 +2206,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3856,11 +2231,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3868,11 +2248,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3880,11 +2265,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -3892,59 +2282,901 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4056,11 +3288,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4068,11 +3305,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4080,11 +3322,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4132,11 +3379,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4144,11 +3396,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4156,11 +3413,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4176,11 +3438,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4188,11 +3455,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4200,11 +3472,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4212,59 +3489,517 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4312,11 +4047,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4324,11 +4064,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4336,11 +4081,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4356,11 +4106,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4368,11 +4123,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4380,11 +4140,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4392,59 +4157,325 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	lw $t3, -8($fp)
+	lw $t4, -8($fp)
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4460,11 +4491,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4472,11 +4508,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4484,11 +4525,16 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4496,59 +4542,136 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -4556,123 +4679,452 @@ main:
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
 	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	lw $t6, -8($fp)
-	lw $t7, -8($fp)
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	lw $t6, -8($fp)
 	lw $t7, -8($fp)
-	add $t7, $t7, $t6
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	lw $t6, -8($fp)
+	lw $t7, -8($fp)
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t4, -8($fp)
+	lw $t5, -8($fp)
+	add $t4, $t4, $t5
+	lw $t5, -8($fp)
+	lw $t6, -8($fp)
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	subi $sp, $sp, 4
+	sw $t1, 0($sp)
+	subi $sp, $sp, 4
+	sw $t2, 0($sp)
+	subi $sp, $sp, 4
+	sw $t3, 0($sp)
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	lw $t0, -8($fp)
+	lw $t1, -8($fp)
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	add $t1, $t1, $t2
+	lw $t2, -8($fp)
+	lw $t3, -8($fp)
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	move $t7, $t0
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	lw $t3, 0($sp)
+	addi $sp, $sp, 4
+	lw $t2, 0($sp)
+	addi $sp, $sp, 4
+	lw $t1, 0($sp)
+	addi $sp, $sp, 4
+	lw $t0, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -5680,11 +6132,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -5692,11 +6149,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -5704,1123 +6166,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	add $t0, $t0, $t1
-	li $t1, 1
-	li $t2, 1
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -7316,11 +6671,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -7328,11 +6688,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -7340,599 +6705,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	add $t1, $t1, $t2
-	li $t2, 1
-	li $t3, 1
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	add $t2, $t2, $t3
-	li $t3, 1
-	li $t4, 1
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	add $t3, $t3, $t4
-	li $t4, 1
-	li $t5, 1
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	add $t4, $t4, $t5
-	li $t5, 1
-	li $t6, 1
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	add $t5, $t5, $t6
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8172,11 +6954,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8184,11 +6971,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8196,11 +6988,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8312,11 +7109,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8324,11 +7126,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8336,11 +7143,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8388,11 +7200,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8400,11 +7217,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8412,11 +7234,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8432,11 +7259,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8444,11 +7276,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8456,11 +7293,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8468,59 +7310,901 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	li $t1, 1
+	li $t2, 1
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8632,11 +8316,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8644,11 +8333,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8656,11 +8350,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8708,11 +8407,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8720,11 +8424,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8732,11 +8441,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8752,11 +8466,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8764,11 +8483,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8776,11 +8500,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8788,59 +8517,517 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8888,11 +9075,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8900,11 +9092,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8912,11 +9109,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8932,11 +9134,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8944,11 +9151,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8956,11 +9168,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -8968,59 +9185,325 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	add $t2, $t2, $t3
+	li $t3, 1
+	li $t4, 1
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9036,11 +9519,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9048,11 +9536,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9060,11 +9553,16 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9072,59 +9570,136 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	add $t3, $t3, $t4
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9132,123 +9707,452 @@ main:
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
+	sw $t5, 0($sp)
 	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
-	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
 	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
-	li $t6, 1
-	li $t7, 1
-	add $t7, $t7, $t6
-	lw $t6, 0($sp)
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
-	subi $sp, $sp, 4
-	sw $t6, 0($sp)
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
-	add $t7, $t7, $t6
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
 	add $t6, $t6, $t7
 	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
 	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
 	li $t6, 1
 	li $t7, 1
-	add $t7, $t7, $t6
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
 	lw $t6, 0($sp)
 	addi $sp, $sp, 4
-	add $t7, $t7, $t6
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
 	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	add $t5, $t5, $t6
+	li $t6, 1
+	li $t7, 1
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	move $t7, $t5
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t4, 1
+	li $t5, 1
+	add $t4, $t4, $t5
+	li $t5, 1
+	li $t6, 1
+	add $t5, $t5, $t6
+	add $t4, $t4, $t5
+	move $t7, $t4
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	add $t6, $t6, $t7
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	subi $sp, $sp, 4
+	sw $t1, 0($sp)
+	subi $sp, $sp, 4
+	sw $t2, 0($sp)
+	subi $sp, $sp, 4
+	sw $t3, 0($sp)
+	subi $sp, $sp, 4
+	sw $t4, 0($sp)
+	subi $sp, $sp, 4
+	sw $t5, 0($sp)
+	subi $sp, $sp, 4
+	sw $t6, 0($sp)
+	li $t0, 1
+	li $t1, 1
+	add $t0, $t0, $t1
+	li $t1, 1
+	li $t2, 1
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	li $t1, 1
+	li $t2, 1
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	li $t1, 1
+	li $t2, 1
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	li $t1, 1
+	li $t2, 1
+	add $t1, $t1, $t2
+	li $t2, 1
+	li $t3, 1
+	add $t2, $t2, $t3
+	add $t1, $t1, $t2
+	add $t0, $t0, $t1
+	move $t7, $t0
+	lw $t6, 0($sp)
+	addi $sp, $sp, 4
+	lw $t5, 0($sp)
+	addi $sp, $sp, 4
+	lw $t4, 0($sp)
+	addi $sp, $sp, 4
+	lw $t3, 0($sp)
+	addi $sp, $sp, 4
+	lw $t2, 0($sp)
+	addi $sp, $sp, 4
+	lw $t1, 0($sp)
+	addi $sp, $sp, 4
+	lw $t0, 0($sp)
 	addi $sp, $sp, 4
 	add $t6, $t6, $t7
 	add $t5, $t5, $t6
@@ -9299,7 +10203,7 @@ __main_0:
 	li $t1, 1
 	add $t0, $t0, $t1
 	lw $t1, -12($fp)
-	slt $t0, $t0, $t1
+	slt $t0, $t1, $t0
 	bnez $t0, __main_1
 	li $t0, 0
 	addi $sp, $fp, -4
