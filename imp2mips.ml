@@ -265,18 +265,15 @@ let tr_function fdef =
    let rec tr_exprAlt a i =
       let reg = "$t" ^ (string_of_int i) in
 
+      if (i > 7) then
+         raise (Invalid_argument "Register more than 7");
+
       match a with
       (* Case of a constant: load the value in the target register $t0.
          Boolean [true] is coded by 1 and boolean [false] by 0. *)
       | Cst(n)  -> 
-         if (i > 7) then
-            raise (Invalid_argument "Register more than 7")
-         else
-            li reg n
+         li reg n
       | Bool(b) -> 
-         if (i > 7) then
-            raise (Invalid_argument "Register more than 7");
-
          if b then li reg 1 else li reg 0
 
       (* Case of a variable. Look up the identifier in the local environement
@@ -295,34 +292,49 @@ let tr_function fdef =
          in
 
          (* Il nous faut de la place, qu'on a pas, on fait de la place *)
-         if(i > 7) then
-            raise (Invalid_argument "Register more than 7");
+         let regCount1 = getRegisterCount e1 in
+         let regCount2 = getRegisterCount e2 in
 
          if(i = 7) then
-            push ("$t" ^ (string_of_int (i-1)))
-            @@ tr_exprAlt e2 (i-1)
-            @@ tr_exprAlt e1 i
-            @@ op reg reg ("$t" ^ (string_of_int (i-1)))
-            @@ pop ("$t" ^ (string_of_int (i-1)))
-         (*if (i > 6) then
-            tr_exprAlt e2 i
-            @@ push reg
-            @@ tr_exprAlt e1 i
-            @@ pop ("$t" ^ (string_of_int (i+1)))
-            @@ op reg reg ("$t" ^ (string_of_int (i+1)))*)
+            let ret = ref (S "") in
+            (* 
+               Réservons le nombre EXACT de registers qu'on a besoin, pas plus, pas moins
+               Petite valeur: Cela permet d'éviter les aller retour en mémoire à cause d'un push/pop trop fréquent
+               Grosse valeur: Vider tout le registre à chaque fois, de 0 à 7, alors qu'on a besoin de moins
+            *)
+
+            let howMuchRegisters = max (max regCount1 regCount2) ((min regCount1 regCount2) + 1) in
+
+            (* On ne veut pas être en-dessous du registre 0*)
+            let floorReg = max (7 - howMuchRegisters) 0 in
+
+            (* Vider *)
+            for regIndex = floorReg to i-1 do
+               ret := !ret @@ push ("$t" ^ (string_of_int regIndex))
+            done;
+
+            ret := !ret
+            (* On refait un tr_exprAlt avec la même expr, mais pas le même registre, un registre plus bas en nombre *)
+            @@ tr_exprAlt a floorReg
+            (* Notre valeur intéressante est dans le registre floorReg, utilisé par tr_exprAlt *)
+            @@ move t7 ("$t" ^ (string_of_int floorReg));
+
+            (* Restaurer *)
+            for regIndex = i-1 downto floorReg do
+               ret := !ret @@ pop ("$t" ^ (string_of_int regIndex))
+            done;
+
+            !ret
          else
-            (if getRegisterCount e1 < getRegisterCount e2 then
+            (if regCount1 < regCount2 then
                tr_exprAlt e2 i
                @@ tr_exprAlt e1 (i+1)
                @@ op reg ("$t" ^ (string_of_int (i+1))) reg
             else
                tr_exprAlt e1 i
-               @@ tr_exprAlt e2 (i+1))
-               @@ op reg reg ("$t" ^ (string_of_int (i+1)))
+               @@ tr_exprAlt e2 (i+1)
+               @@ op reg reg ("$t" ^ (string_of_int (i+1))))
 
-      (* Function call.
-         Before jumping to the function itself, evaluate all parameters and put
-         their values on the stack, from last to first. *)
       | Call(f, params) ->
          (* Evaluate the arguments and pass them on the stack. *)
          let ret = ref (S "") in
