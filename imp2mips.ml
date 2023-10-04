@@ -335,39 +335,13 @@ let tr_function fdef =
             (fun e code -> code @@ tr_exprAlt e 0 @@ push reg)
             params nop);
 
+         ret := !ret @@ jal f @@ addi sp sp (4 * List.length params);
+
          for regIndex = (i-1) downto 0 do
             ret := !ret @@ pop ("$t" ^ (string_of_int regIndex))
          done;
 
          !ret
-         (* Here, the top of the stack looks like this
-
-            +------+
-            |  aN  |
-            +------+
-            |      |
-            |  ..  |
-            |      |
-            +------+
-            |  a2  |
-            +------+
-            |  a1  |  <-  address given by $sp
-            +------+
-            |      |  (free)
-
-            Reminder: the "top" of the stack is its smallest address.
-            This top of stack is the first part of the activation frame.
-            The second part, containing local variables, will be installed by
-            the function itself.  *) 
-         (* Function call, with return address stored in register $ra. *)
-         @@ jal f
-         (* After the call, execution comes back at this point of the code, and
-            register $t0 contains the returned value. *)
-         (* End of the call protocol: remove the arguments from the top of the
-            stack. Incrementing $sp is enough (the values are not destroyed, but
-            are not reachable anymore). *)
-         @@ addi sp sp (4 * List.length params)
-
    in
 
   (**

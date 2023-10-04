@@ -40,13 +40,70 @@ __l_0:
 	lw $fp, 0($sp)
 	addi $sp, $sp, 4
 	jr $ra
-main:
+affiche_ligne:
 	subi $sp, $sp, 4
 	sw $fp, 0($sp)
 	subi $sp, $sp, 4
 	sw $ra, 0($sp)
 	addi $fp, $sp, 4
 	addi $sp, $sp, -4
+	li $t0, 0
+	sw $t0, -8($fp)
+	b __affiche_ligne_0
+__affiche_ligne_1:
+	lw $t0, 4($fp)
+	lw $t1, 4($fp)
+	mul $t0, $t0, $t1
+	lw $t1, -8($fp)
+	lw $t2, -8($fp)
+	mul $t1, $t1, $t2
+	add $t0, $t0, $t1
+	lw $t1, 8($fp)
+	lw $t2, 8($fp)
+	mul $t1, $t1, $t2
+	slt $t0, $t0, $t1
+	bnez $t0, __affiche_ligne_2
+	li $t0, 35
+	move $a0, $t0
+	li $v0, 11
+	syscall
+	b __affiche_ligne_3
+__affiche_ligne_2:
+	li $t0, 46
+	move $a0, $t0
+	li $v0, 11
+	syscall
+__affiche_ligne_3:
+	la $t0, espace
+	lw $t0, 0($t0)
+	move $a0, $t0
+	li $v0, 11
+	syscall
+	lw $t0, -8($fp)
+	li $t1, 1
+	add $t0, $t0, $t1
+	sw $t0, -8($fp)
+__affiche_ligne_0:
+	lw $t0, 8($fp)
+	li $t1, 1
+	add $t0, $t0, $t1
+	lw $t1, -8($fp)
+	slt $t0, $t0, $t1
+	bnez $t0, __affiche_ligne_1
+	li $t0, 0
+	addi $sp, $fp, -4
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	lw $fp, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra
+main:
+	subi $sp, $sp, 4
+	sw $fp, 0($sp)
+	subi $sp, $sp, 4
+	sw $ra, 0($sp)
+	addi $fp, $sp, 4
+	addi $sp, $sp, -8
 	li $t0, 2
 	sw $t0, -8($fp)
 	lw $t0, -8($fp)
@@ -9210,6 +9267,40 @@ main:
 	lw $t1, -8($fp)
 	add $t0, $t0, $t1
 	sw $t0, -8($fp)
+	li $t0, 0
+	sw $t0, -12($fp)
+	li $t0, 10
+	la $t1, retour
+	sw $t0, 0($t1)
+	li $t0, 32
+	la $t1, espace
+	sw $t0, 0($t1)
+	b __main_0
+__main_1:
+	lw $t0, 4($fp)
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	lw $t0, -12($fp)
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	jal affiche_ligne
+	addi $sp, $sp, 8
+	la $t0, retour
+	lw $t0, 0($t0)
+	move $a0, $t0
+	li $v0, 11
+	syscall
+	lw $t0, -12($fp)
+	li $t1, 1
+	add $t0, $t0, $t1
+	sw $t0, -12($fp)
+__main_0:
+	lw $t0, 4($fp)
+	li $t1, 1
+	add $t0, $t0, $t1
+	lw $t1, -12($fp)
+	slt $t0, $t0, $t1
+	bnez $t0, __main_1
 	li $t0, 0
 	addi $sp, $fp, -4
 	lw $ra, 0($sp)
