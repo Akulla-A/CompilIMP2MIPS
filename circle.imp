@@ -23,6 +23,10 @@ function affiche_ligne(i, n) {
   }
 }
 
+function paramPreserve(a, b) {
+  return a + b;
+}
+
 function main(arg) {
   var i;
   var j;
@@ -42,4 +46,6 @@ function main(arg) {
     putchar(retour);
     j = j + 1;
   }
+
+  putchar(48 + paramPreserve(1, 2) + paramPreserve(0, 3));
 }

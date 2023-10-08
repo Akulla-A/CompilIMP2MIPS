@@ -97,6 +97,29 @@ __affiche_ligne_0:
 	lw $fp, 0($sp)
 	addi $sp, $sp, 4
 	jr $ra
+paramPreserve:
+	subi $sp, $sp, 4
+	sw $fp, 0($sp)
+	subi $sp, $sp, 4
+	sw $ra, 0($sp)
+	addi $fp, $sp, 4
+	addi $sp, $sp, 0
+	lw $t0, 4($fp)
+	lw $t1, 8($fp)
+	add $t0, $t0, $t1
+	addi $sp, $fp, -4
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	lw $fp, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra
+	li $t0, 0
+	addi $sp, $fp, -4
+	lw $ra, 0($sp)
+	addi $sp, $sp, 4
+	lw $fp, 0($sp)
+	addi $sp, $sp, 4
+	jr $ra
 main:
 	subi $sp, $sp, 4
 	sw $fp, 0($sp)
@@ -10167,6 +10190,7 @@ main:
 	sw $t0, 0($sp)
 	jal l
 	addi $sp, $sp, 4
+	move $t0, $t0
 	lw $t0, -8($fp)
 	lw $t1, -8($fp)
 	add $t0, $t0, $t1
@@ -10189,6 +10213,7 @@ __main_1:
 	sw $t0, 0($sp)
 	jal affiche_ligne
 	addi $sp, $sp, 8
+	move $t0, $t0
 	la $t0, retour
 	lw $t0, 0($t0)
 	move $a0, $t0
@@ -10205,6 +10230,34 @@ __main_0:
 	lw $t1, -12($fp)
 	slt $t0, $t1, $t0
 	bnez $t0, __main_1
+	li $t0, 3
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	li $t0, 1
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	jal paramPreserve
+	addi $sp, $sp, 8
+	move $t0, $t0
+	li $t1, 40
+	add $t0, $t1, $t0
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	li $t0, 3
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	li $t0, 1
+	subi $sp, $sp, 4
+	sw $t0, 0($sp)
+	jal paramPreserve
+	addi $sp, $sp, 8
+	move $t1, $t0
+	lw $t0, 0($sp)
+	addi $sp, $sp, 4
+	add $t0, $t0, $t1
+	move $a0, $t0
+	li $v0, 11
+	syscall
 	li $t0, 0
 	addi $sp, $fp, -4
 	lw $ra, 0($sp)

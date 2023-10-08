@@ -344,10 +344,10 @@ let tr_function fdef =
          done;
 
          ret := !ret @@ (List.fold_right
-            (fun e code -> code @@ tr_exprAlt e 0 @@ push reg)
+            (fun e code -> code @@ tr_exprAlt e 0 @@ push t0)
             params nop);
 
-         ret := !ret @@ jal f @@ addi sp sp (4 * List.length params);
+         ret := !ret @@ jal f @@ addi sp sp (4 * List.length params) @@ move reg t0;
 
          for regIndex = (i-1) downto 0 do
             ret := !ret @@ pop ("$t" ^ (string_of_int regIndex))
