@@ -47,5 +47,5 @@ function main(arg) {
     j = j + 1;
   }
 
-  putchar(48 + paramPreserve(1, 2) + paramPreserve(0, 3));
+  putchar(48 + paramPreserve(1, 2) + paramPreserve(-1, 5));
 }
